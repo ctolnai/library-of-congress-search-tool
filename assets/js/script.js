@@ -11,9 +11,11 @@ function handleSearchFormSubmit(event) {
     return;
   }
 
-  var queryString = './search-results.html?q=' + searchInputVal + '&format=' + formatInputVal;
+  var queryString = './search-results.html?q=' + searchInputVal + '&format=' + formatInputVal + '&fo=json';
 
-  location.assign(queryString);
+  location.replace(queryString);
+
+  console.log(queryString)
 }
 
 searchFormEl.addEventListener('submit', handleSearchFormSubmit);

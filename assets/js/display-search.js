@@ -10,7 +10,18 @@ function getParams() {
   var query = searchParamsArr[0].split('=').pop();
   var format = searchParamsArr[1].split('=').pop();
 
-  searchApi(query, format);
+  console.log(query);
+  console.log(format);
+
+fetch("https://www.loc.gov/" + format + "/?q=" + query + "&fo=json")
+  .then(function(response){return response.json();})
+  .then(function(data){
+    console.log(data)
+  })
 }
 
 getParams()
+
+
+// https://www.loc.gov/maps/?q=civil war&fo=json
+
